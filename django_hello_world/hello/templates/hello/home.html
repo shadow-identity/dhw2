@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% load static %}
+{% load hello_extras %}
+<table class="contact_table">
+    <tbody>
+        <tr>
+            <td colspan="2">
+                <h3>42 Coffee Cups Test Assignment</h3>
+            </td>
+            <td id="edit_links" colspan="2">
+                {% if user.is_authenticated %}
+                    <a href="{% url 'form' %}">Edit</a>
+                {% else %}
+                    <a href="{% url 'login' %}">Login</a>
+                {% endif %}
+                <a href="{% edit_link record %}">(admin)</a>
+            </td>
+        </tr>
+        <tr>
+            <td class="key">Name</td>
+            <td class="value">{{ record.name }}</td>
+            <td colspan="2">Contacts</td>
+        </tr>
+        <tr>
+            <td class="key">Last Name</td>
+            <td class="value">{{ record.surname }}</td>
+            <td class="key">Email</td>
+            <td class="value">{{ record.email }}</td>
+        </tr>
+        <tr>
+            <td rowspan="2" class="key">Date of birth</td>
+            <td rowspan="2" class="value">{{ record.date_of_birth}}</td>
+            <td class="key">Jabber</td>
+            <td class="value">{{ record.jabber }}</td>
+        </tr>
+        <tr>
+            <td class="key">Skype</td>
+            <td class="value">{{ record.skype }}</td>
+        </tr>
+        <tr>
+            <td rowspan="4" colspan="2" class="key">Photo:
+                <br>
+                <img src="{{ record.photo.url }}">
+            </td>
+            <td class="key">Other contacts:</td>
+        </tr>
+        <tr>
+            <td colspan="2" class="value">{{ record.other_contacts }}</td>
+        </tr>
+        <tr>
+            <td colspan="2" class="key">Bio:</td>
+        </tr>
+        <tr>
+            <td colspan="2" class="value">{{ record.bio }}</td>
+        </tr>
+    </tbody>
+</table>
+<hr align="left">
+<a href="{% url 'requests' %}">requests</a>
+{% endblock content %}
