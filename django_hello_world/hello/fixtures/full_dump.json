@@ -123,27 +123,9 @@
 },
 {
     "pk": 1, 
-    "model": "hello.state", 
-    "fields": {
-        "record_id": 1, 
-        "model": "<class 'django_hello_world.hello.models.Contact'>", 
-        "state": "created"
-    }
-},
-{
-    "pk": 2, 
-    "model": "hello.state", 
-    "fields": {
-        "record_id": 1, 
-        "model": "<class 'django_hello_world.hello.models.Contact'>", 
-        "state": "changed"
-    }
-},
-{
-    "pk": 1, 
     "model": "south.migrationhistory", 
     "fields": {
-        "applied": "2013-09-24T02:14:57.007", 
+        "applied": "2013-09-24T12:29:05.548", 
         "app_name": "hello", 
         "migration": "0001_initial"
     }
