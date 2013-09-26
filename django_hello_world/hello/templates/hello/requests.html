@@ -36,7 +36,12 @@
                 <td>{{ req.user }}</td>
                 <td>{{ req.url }}</td>
                 <td>{{ req.method }}</td>
-                <td>{% inplace_edit "req.priority" %}</td>
+                {% comment %}<td>{% inplace_edit "req.priority" %}</td>{% endcomment %}
+                <td>
+                    <a class="decrease_priority" href="{% url "decrease_priority" req.id %}">-</a>
+                    {{ req.priority }}
+                    <a class="increase_priority" href="{% url "increase_priority" req.id %}">+</a>
+                </td>
             </tr>
         {% endfor %}
         </tbody>
